@@ -5,11 +5,17 @@ const Post = require('./Models/Posts');
 const User = require('./Models/Users');
 
 const app = express();
+app.use(express.json())
 
-mongoose.connect(
-  'mongodb+srv://user:test1945@cluster0-306uy.mongodb.net/test?retryWrites=true&w=majority',
-  { useUnifiedTopology: true, useNewUrlParser: true }
-);
+mongoose
+  .connect(
+    'mongodb+srv://user:test1945@cluster0-306uy.mongodb.net/test?retryWrites=true&w=majority',
+    { useUnifiedTopology: true, useNewUrlParser: true }
+  )
+  .then(() => console.log('Successfully connected to the database'))
+  .catch((err) =>
+    console.log('Could not connect to the database. Exiting now...', err)
+  );
 
 //root endpoint
 app.get('/', (req, res) => {
