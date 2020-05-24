@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const Post = require('./Models/Posts')
+const User = require('./Models/Users')
 
 const app = express();
 
