@@ -32,11 +32,11 @@ class Post extends Component {
   //handling reply input text change
   txtChange = (e) => {
     this.setState({ replyText: e.target.value });
-    console.log(this.state.replyText);
   };
 
   //updating the replies when click Reply button
   addReply = (post, i) => {
+    console.log(post._id)
     fetch(`http://localhost:5000/reply/${post._id}`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
@@ -72,7 +72,7 @@ class Post extends Component {
                 className="rplyTxt"
                 onChange={(txt) => this.txtChange(txt)}
               ></input>
-              <button>reply</button>
+              <button onClick={()=>this.addReply(post,i)}>reply</button>
               <button>Edit</button>
               <button onClick={() => this.delete(post)}>Delete</button>
               {/* </div> */}

@@ -74,7 +74,7 @@ app.delete('/delete/:postId', (req, res) => {
 });
 
 //reply to post endpoint
-app.post('/reply/:postID', (req, res) => {
+app.post('/reply/:postId', (req, res) => {
   const { description, writtenBy } = req.body;
   Post.findById(req.params.postId)
     .then((post) => {
@@ -84,7 +84,7 @@ app.post('/reply/:postID', (req, res) => {
         .then((data) => res.json(data))
         .catch((err) => res.status(400).json('Unable to save the data'));
     })
-    .catch((err) => res.status(400).json('Unable to reply to this post'));
+    .catch((err) => res.status(400).json('Unable to reply the post'));
 });
 
 //register new user end point
