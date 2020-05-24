@@ -55,6 +55,12 @@ class Post extends Component {
       .catch((err) => console.log(err));
   };
 
+  //handling Edit button onClick event
+  edit = (post)=>{
+    this.props.editedPost(post);
+    this.props.routeChange('edit')
+  }
+
   render() {
     console.log(this.state.data);
     return (
@@ -73,7 +79,7 @@ class Post extends Component {
                 onChange={(txt) => this.txtChange(txt)}
               ></input>
               <button onClick={()=>this.addReply(post,i)}>reply</button>
-              <button>Edit</button>
+              <button onClick={()=>this.edit(post)}>Edit</button>
               <button onClick={() => this.delete(post)}>Delete</button>
               {/* </div> */}
               {post.replies.map((reply) => {
