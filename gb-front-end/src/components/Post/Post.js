@@ -46,7 +46,7 @@ class Post extends Component {
               ></input>
               <button>reply</button>
               <button>Edit</button>
-              <button>Delete</button>
+              <button onClick={() => this.delete(post)}>Delete</button>
               {/* </div> */}
               {post.replies.map((reply) => {
                 return (
