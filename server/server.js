@@ -11,6 +11,7 @@ mongoose.connect(
   { useUnifiedTopology: true, useNewUrlParser: true }
 );
 
+//root endpoint
 app.get('/', (req, res) => {
   Post.find()
     .sort('-date')
