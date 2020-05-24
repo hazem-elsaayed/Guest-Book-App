@@ -34,4 +34,9 @@ app.post('/post', (req, res) => {
     .catch((err) => res.status(400).json(err));
 });
 
+//edit post endpoint
+app.post('/edit/:postId',(req,res)=>{
+  
+})
+
 app.listen(5000, () => console.log('App is working on port 5000'));
