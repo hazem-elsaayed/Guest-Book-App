@@ -5,12 +5,28 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
+    this.state={
+      route:'home'
+    }
+  }
+
+  //Routing functions to handle renered components
+  Routing=(route)=>{
+    this.setState({route:route})
   }
 
   render() {
     return (
       <div className="App">
-        <Post />
+        {this.state.route==='home'?(
+          <div>
+            <Post />
+          </div>
+        ) : (
+          <div></div>
+        )
+
+        }
       </div>
     );
   }
