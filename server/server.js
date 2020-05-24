@@ -66,13 +66,22 @@ app.post('/reply/:postID', (req, res) => {
 });
 
 //register new user end point
-app.post('/register',(req,res)=>{
-  const{name,email,password}=req.body;
+app.post('/register', (req, res) => {
+  const { name, email, password } = req.body;
   let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (!name || !email || !password || !email.match(mailformat)){
-    return res.status(400).json('Wrong Inputs')
+  if (!name || !email || !password || !email.match(mailformat)) {
+    return res.status(400).json('Wrong Inputs');
   }
-  
-})
+  let hashPass = bcrypt.hashSync(password);
+  const user = new User({
+    name: name,
+    email: email,
+    password: hashPass,
+  });
+  user
+    .save()
+    .then((data) => res.json(data))
+    .catch((err) => res.status(400).json('Unable to register'));
+});
 
 app.listen(5000, () => console.log('App is working on port 5000'));
