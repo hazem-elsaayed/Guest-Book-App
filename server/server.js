@@ -51,4 +51,9 @@ app.delete('/delete/:postId', (req, res) => {
     .catch((err) => res.status(400).json('Unable to delete post'));
 });
 
+//reply to post endpoint
+app.post('/reply/:postID',(req,res)=>{
+  
+})
+
 app.listen(5000, () => console.log('App is working on port 5000'));
