@@ -16,11 +16,20 @@ class Post extends Component {
   }
 
   render() {
-    console.log(this.state.data)
+    console.log(this.state.data);
     return (
-    <div>
-
-    </div>);
+      <div className="container">
+        {this.state.data.map((post, i) => {
+          return (
+            <div className="post">
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
+              <p>{post.createdBy} wrote</p>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
