@@ -16,7 +16,11 @@ class Post extends Component {
   }
 
   render() {
-    return <div></div>;
+    console.log(this.state.data)
+    return (
+    <div>
+
+    </div>);
   }
 }
 
