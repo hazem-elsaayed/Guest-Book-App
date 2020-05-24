@@ -4,7 +4,7 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null,
+      data: [],
     };
   }
 
@@ -25,6 +25,12 @@ class Post extends Component {
               <h3>{post.title}</h3>
               <p>{post.description}</p>
               <p>{post.createdBy} wrote</p>
+              {/* <div> */}
+              <input type='text'></input>
+              <button>reply</button>
+              <button>Edit</button>
+              <button>Delete</button>
+              {/* </div> */}
             </div>
           );
         })}
