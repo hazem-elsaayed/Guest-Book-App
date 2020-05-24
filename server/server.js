@@ -85,11 +85,26 @@ app.post('/register', (req, res) => {
 });
 
 //signin endpoint
-app.post('/signin',(req,res)=>{
-  const{email,password}=req.body
-  if (!email || !password){
-    return res.status(400).json('Empty Inputs')
+app.post('/signin', (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json('Empty Inputs');
   }
-})
+  User.findOne({ email: email })
+    .then((user) => {
+      const validPass = bcrypt.compareSync(password, user.password);
+      if (validPass) {
+        return res.json({
+          id: user._id,
+          name: user.name,
+          email: user.email,
+          date: user.date,
+        });
+      } else {
+        return res.status(400).json('Wrong Credentials');
+      }
+    })
+    .catch((err) => res.status(400).json('Unable to get the user'));
+});
 
 app.listen(5000, () => console.log('App is working on port 5000'));
