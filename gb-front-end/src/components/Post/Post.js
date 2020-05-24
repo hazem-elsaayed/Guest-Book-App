@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Post.css'
+import './Post.css';
 
 class Post extends Component {
   constructor(props) {
@@ -16,6 +16,18 @@ class Post extends Component {
       .then((data) => this.setState({ data }));
   }
 
+  //handling post deletion
+  delete = (post) => {
+    let confirm = window.confirm('Are you sure you want to delete this post?');
+    if (confirm) {
+      fetch(`http://localhost:5000/delete/${post._id}`, {
+        method: 'delete',
+      })
+        .then(this.componentDidMount())
+        .catch((err) => console.log(err));
+    }
+  };
+
   render() {
     console.log(this.state.data);
     return (
@@ -24,7 +36,7 @@ class Post extends Component {
           return (
             <div className="post">
               <h3>{post.title}</h3>
-              <p className='pstTxt'>{post.description}</p>
+              <p className="pstTxt">{post.description}</p>
               <p>{post.createdBy} wrote</p>
               {/* <div> */}
               <input
@@ -39,7 +51,7 @@ class Post extends Component {
               {post.replies.map((reply) => {
                 return (
                   <div className="reply">
-                    <p className='pstTxt'>{reply.description}</p>
+                    <p className="pstTxt">{reply.description}</p>
                     <p>{reply.writtenBy} replied</p>
                   </div>
                 );
