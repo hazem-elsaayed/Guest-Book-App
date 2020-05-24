@@ -65,4 +65,9 @@ app.post('/reply/:postID', (req, res) => {
     .catch((err) => res.status(400).json('Unable to reply to this post'));
 });
 
+//register new user end point
+app.post('/register',(req,res)=>{
+  
+})
+
 app.listen(5000, () => console.log('App is working on port 5000'));
