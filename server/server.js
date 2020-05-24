@@ -35,8 +35,13 @@ app.post('/post', (req, res) => {
 });
 
 //edit post endpoint
-app.post('/edit/:postId',(req,res)=>{
-  
-})
+app.post('/edit/:postId', (req, res) => {
+  const { title, description } = req.body;
+  Post.findByIdAndUpdate(req.params.postId, {
+    $set: { title: title, description: description, date: Date.now },
+  })
+    .then((data) => res.json(data))
+    .catch((err) => res.status(400).json('Unable to edit the post'));
+});
 
 app.listen(5000, () => console.log('App is working on port 5000'));
