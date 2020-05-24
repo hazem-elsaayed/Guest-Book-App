@@ -1,16 +1,22 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react';
 
-class Post extends Component{
-  constructor(props){
-    super(props)
+class Post extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+    };
   }
 
-  render(){
-    return(
-      <div>
+  //getting intial data from server
+  componentDidMount() {
+    fetch('http://localhost:5000/')
+      .then((response) => response.json())
+      .then((data) => this.setState({ data }));
+  }
 
-      </div>
-    )
+  render() {
+    return <div></div>;
   }
 }
 
