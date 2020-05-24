@@ -67,6 +67,11 @@ app.post('/reply/:postID', (req, res) => {
 
 //register new user end point
 app.post('/register',(req,res)=>{
+  const{name,email,password}=req.body;
+  let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (!name || !email || !password || !email.match(mailformat)){
+    return res.status(400).json('Wrong Inputs')
+  }
   
 })
 
