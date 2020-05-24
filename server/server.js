@@ -86,7 +86,10 @@ app.post('/register', (req, res) => {
 
 //signin endpoint
 app.post('/signin',(req,res)=>{
-  
+  const{email,password}=req.body
+  if (!email || !password){
+    return res.status(400).json('Empty Inputs')
+  }
 })
 
 app.listen(5000, () => console.log('App is working on port 5000'));
