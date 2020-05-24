@@ -26,21 +26,23 @@ class Post extends Component {
               <p>{post.description}</p>
               <p>{post.createdBy} wrote</p>
               {/* <div> */}
-              <input type='text'></input>
+              <input
+                type="text"
+                placeholder="Add a reply"
+                className="rplyTxt"
+              ></input>
               <button>reply</button>
               <button>Edit</button>
               <button>Delete</button>
               {/* </div> */}
-              {post.replies.map(reply=>{
-                return(
-                  <div className='reply'>
+              {post.replies.map((reply) => {
+                return (
+                  <div className="reply">
                     <p>{reply.description}</p>
-                <p>{reply.writtenBy} replied</p>
+                    <p>{reply.writtenBy} replied</p>
                   </div>
-                )
-              })
-
-              }
+                );
+              })}
             </div>
           );
         })}
