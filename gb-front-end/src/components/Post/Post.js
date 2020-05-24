@@ -6,6 +6,7 @@ class Post extends Component {
     super(props);
     this.state = {
       data: [],
+      replyText:'',
     };
   }
 
@@ -28,6 +29,12 @@ class Post extends Component {
     }
   };
 
+  //handling reply input text change
+  txtChange=(e)=>{
+    this.setState({replyText:e.target.value})
+    console.log(this.state.replyText)
+  }
+
   render() {
     console.log(this.state.data);
     return (
@@ -43,6 +50,7 @@ class Post extends Component {
                 type="text"
                 placeholder="Add a reply"
                 className="rplyTxt"
+                onChange={(txt)=>this.txtChange(txt)}
               ></input>
               <button>reply</button>
               <button>Edit</button>
