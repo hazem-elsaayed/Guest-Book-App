@@ -5,8 +5,20 @@ const Post = require('./Models/Posts');
 const User = require('./Models/Users');
 
 const app = express();
-app.use(express.json())
 
+app.use(express.json());
+
+//preventing CORS error
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
+//connecting to DB
 mongoose
   .connect(
     'mongodb+srv://user:test1945@cluster0-306uy.mongodb.net/test?retryWrites=true&w=majority',
