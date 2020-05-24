@@ -23,7 +23,7 @@ class Post extends Component {
           return (
             <div className="post">
               <h3>{post.title}</h3>
-              <p>{post.description}</p>
+              <p className='pstTxt'>{post.description}</p>
               <p>{post.createdBy} wrote</p>
               {/* <div> */}
               <input
@@ -38,7 +38,7 @@ class Post extends Component {
               {post.replies.map((reply) => {
                 return (
                   <div className="reply">
-                    <p>{reply.description}</p>
+                    <p className='pstTxt'>{reply.description}</p>
                     <p>{reply.writtenBy} replied</p>
                   </div>
                 );
