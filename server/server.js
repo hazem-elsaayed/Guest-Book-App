@@ -44,4 +44,11 @@ app.post('/edit/:postId', (req, res) => {
     .catch((err) => res.status(400).json('Unable to edit the post'));
 });
 
+//delete post endpoint
+app.delete('/delete/:postId', (req, res) => {
+  Post.findByIdAndDelete(req.params.postId)
+    .then((data) => res.json(data))
+    .catch((err) => res.status(400).json('Unable to delete post'));
+});
+
 app.listen(5000, () => console.log('App is working on port 5000'));
