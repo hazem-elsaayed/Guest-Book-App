@@ -31,6 +31,16 @@ class Post extends Component {
               <button>Edit</button>
               <button>Delete</button>
               {/* </div> */}
+              {post.replies.map(reply=>{
+                return(
+                  <div className='reply'>
+                    <p>{reply.description}</p>
+                <p>{reply.writtenBy} replied</p>
+                  </div>
+                )
+              })
+
+              }
             </div>
           );
         })}
