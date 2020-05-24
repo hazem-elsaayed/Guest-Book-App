@@ -6,7 +6,7 @@ class Post extends Component {
     super(props);
     this.state = {
       data: [],
-      replyText:'',
+      replyText: '',
     };
   }
 
@@ -30,10 +30,30 @@ class Post extends Component {
   };
 
   //handling reply input text change
-  txtChange=(e)=>{
-    this.setState({replyText:e.target.value})
-    console.log(this.state.replyText)
-  }
+  txtChange = (e) => {
+    this.setState({ replyText: e.target.value });
+    console.log(this.state.replyText);
+  };
+
+  //updating the replies when click Reply button
+  addReply = (post, i) => {
+    fetch(`http://localhost:5000/reply/${post._id}`, {
+      method: 'post',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        description: this.state.replyText,
+        writtenBy: 'Zoma',
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data._id) {
+          this.componentDidMount();
+          document.getElementsByClassName('rplyTxt')[i].value = '';
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   render() {
     console.log(this.state.data);
@@ -50,7 +70,7 @@ class Post extends Component {
                 type="text"
                 placeholder="Add a reply"
                 className="rplyTxt"
-                onChange={(txt)=>this.txtChange(txt)}
+                onChange={(txt) => this.txtChange(txt)}
               ></input>
               <button>reply</button>
               <button>Edit</button>
