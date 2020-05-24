@@ -84,4 +84,9 @@ app.post('/register', (req, res) => {
     .catch((err) => res.status(400).json('Unable to register'));
 });
 
+//signin endpoint
+app.post('/signin',(req,res)=>{
+  
+})
+
 app.listen(5000, () => console.log('App is working on port 5000'));
