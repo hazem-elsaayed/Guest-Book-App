@@ -14,7 +14,7 @@ $ cd server
 $ npm install
 ```
 After installation run `$ npm start` to start the server at port 5000 and make sure that the following message are shown in the terminal `App is working on port 5000` and `Successfully connected to the database`. if not, restart the server by pressing CTRL+C and `$ npm start` again <br/>
-Then open a new terminal window inside the **gb-front-end** folder and install the dependencies for the front end using `$ npm install`<br/>
+Then open a new terminal window inside the **gb-front-end** folder.
 Finally start the front end with `$ npm start` at port 3000
 
 ## More Information
