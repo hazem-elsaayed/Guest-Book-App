@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-const Navbar =({routeChange})=>{
-  return(
-    <div className='Navbar'>
+const Navbar = ({ routeChange }) => {
+  return (
+    <div className="Navbar">
       <h1>Guest Book App</h1>
-      <div className='NavLinks'>
-        <p>Home</p>
-        <p>Add New Post</p>
-        <p>Signout</p>
+      <div className="NavLinks">
+        <p onClick={() => routeChange('home')}>Home</p>
+        <p onClick={() => routeChange('newPost')}>Add New Post</p>
+        <p onClick={() => routeChange('signin')}>Signout</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
