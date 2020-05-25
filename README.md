@@ -66,7 +66,7 @@ It renders the form with which you can register.
 
 ## Security 
 
-* No Duplicate Emails: The emails are unique so that a user can't register 2 accounts with the same email 
-* Editing and Deleting: Only the creator user can edit or delete the post
-* Passwords: Passwords are hashed and stored scurely in the database and they are not sent to the server or the front end from any endpoint
-* Registering: Validating inputs for the register form so that the email format is correct, the password is matching the re-typed password, and user can't submit an empty field
+* **No Duplicate Emails**: The emails are unique so that a user can't register 2 accounts with the same email 
+* **Editing and Deleting**: Only the creator user can edit or delete the post
+* **Passwords**: Passwords are hashed and stored scurely in the database and they are not sent to the server or the front end from any endpoint
+* **Registering**: Validating inputs for the register form so that the email format is correct, the password is matching the re-typed password, and user can't submit an empty field
