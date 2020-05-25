@@ -61,6 +61,9 @@ class Register extends Component {
   render() {
     return (
       <div className="forms">
+        <br></br>
+        <h1>Welcome to the Geust Book App</h1>
+        <h4>Please Sign in or Register to get to the App</h4>
         <fieldset>
           <legend>Register</legend>
           <label>Name:</label>
