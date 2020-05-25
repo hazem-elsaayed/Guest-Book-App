@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'home',
+      route: 'signin',
       editedPost: null,
     };
   }
@@ -44,6 +44,10 @@ class App extends Component {
           <div>
             <Navbar routeChange={this.Routing} />
             <NewPost routeChange={this.Routing} />
+          </div>
+        ) : this.state.route === 'signin' ? (
+          <div>
+            <Signin routeChange={this.Routing} />
           </div>
         ) : (
           <div></div>
