@@ -17,6 +17,11 @@ After installation run `$ npm start` to start the server at port 5000 and make s
 Then open a new terminal window inside the **gb-front-end** folder.
 Finally start the front end with `$ npm start` at port 3000
 
+## Usage
+First of all you have to create an account to get to the app <br/>
+Once you login you can add new post by clicking on **Add New Post** button in the navigation bar. It will take you to a form where you have to enter a post title and post description then click submit<br/>
+You can then edit or delete the posts you created by clicking on **Edit** / **Delete** buttons below the post or reply to any other post by typing a reply in the textbox and clicking on **Reply** button on the home page
+
 ## More Information
 
 ## Backend
