@@ -21,6 +21,7 @@ class Edit extends Component {
 
   //handling submit button onClick event
   submit = () => {
+    console.log(this.props.editedPost._id)
     fetch(`http://localhost:5000/edit/${this.props.editedPost._id}`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },

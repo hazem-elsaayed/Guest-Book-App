@@ -60,10 +60,10 @@ app.post('/post', (req, res) => {
 app.post('/edit/:postId', (req, res) => {
   const { title, description } = req.body;
   Post.findByIdAndUpdate(req.params.postId, {
-    $set: { title: title, description: description, date: Date.now },
+    $set: { title: title, description: description, date: Date.now() },
   })
     .then((data) => res.json(data))
-    .catch((err) => res.status(400).json('Unable to edit the post'));
+    .catch((err) => res.status(400).json(err));
 });
 
 //delete post endpoint
