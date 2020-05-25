@@ -19,11 +19,21 @@ Finally start the front end with `$ npm start` at port 3000
 
 ## More Information
 
-### Backend
+## Backend
 
 It is written in JS using express framework, a MongoDB is used to store data and communication between server and database is handeled by Mongoose
 
-#### Models
+### Models
 2 models are used to store data
 * **Post model** : in which posts are stored and it has the following properties:<br/> =>**title** , **describtion** which are the main data of a post, <br/>=>**createdBy**, **email** which cointain the data of the creator user, <br/>=>**replies** which holds all the replies to the post, and finally <br/>=>**date** which cointains the creating date of a post
 * **User model** : in which Users data are stored and it has the following properties: **name**, **email**, **password**, and **date** for user creation time
+
+### Endpoints
+The server has 7 end points which are:
+* **Root Endpoint** : recieves a get request and returns all the posts ordered by date (The most recent are shown first)
+* **New Post Endpoint** : recieves a post request with a post's (title, description, createdBy, email) data in JSON format and returns the new created post
+* **Edit Post Endpoint** : it gets the post id from the url and recieves a post request with a post's (title, description) data in JSON format and returns the edited post after updating it
+* **Delete Post Endpoint** : receives a delete request and gets the post id from the url and then delete the post
+* **Reply Endpoint** : receives a post request with a reply's (description, writtenBy) data and store it to the desired post using the post id from the url and returns back the post after update
+* **Register Endpoint** : receives a post request with a user's (name, email, password) data, hashs the password and saves the information in the database and returns the user's information
+* **Signin Endpoint** : receives a post request with the email and password and if email is in the database it compares the password and gives back the user's information 
