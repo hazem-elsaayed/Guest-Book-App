@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Post from './components/Post/Post';
+import Edit from './components/Edit/Edit';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +8,7 @@ class App extends Component {
     super();
     this.state = {
       route: 'home',
-      editedPost:null,
+      editedPost: null,
     };
   }
 
@@ -17,9 +18,9 @@ class App extends Component {
   };
 
   //To save data from post component and pass it to the Edit component
-  editedPost=(post)=>{
-    this.setState({editedPost:post});
-  }
+  editedPost = (post) => {
+    this.setState({ editedPost: post });
+  };
 
   render() {
     return (
@@ -29,7 +30,9 @@ class App extends Component {
             <Post routeChange={this.Routing} editedPost={this.editedPost} />
           </div>
         ) : (
-          <div></div>
+          <div>
+            <Edit />
+          </div>
         )}
       </div>
     );
