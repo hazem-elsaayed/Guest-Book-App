@@ -11,6 +11,26 @@ class Register extends Component {
     };
   }
 
+  //handling name change
+  nameChange = (txt) => {
+    this.setState({ name: txt.target.value });
+  };
+
+  //handling email change
+  emailChange = (txt) => {
+    this.setState({ email: txt.target.value });
+  };
+
+  //handling password change
+  passwordChange = (txt) => {
+    this.setState({ password: txt.target.value });
+  };
+
+  //handling retyped password change
+  password2Change = (txt) => {
+    this.setState({ password2: txt.target.value });
+  };
+
   render() {
     return (
       <div>
