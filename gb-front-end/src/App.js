@@ -26,6 +26,18 @@ class App extends Component {
     this.setState({ route: route });
   };
 
+  //retrieving user data from signin and storing in state
+  loadUser = (user) => {
+    this.setState({
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        date: user.date,
+      },
+    });
+  };
+
   //To save data from post component and pass it to the Edit component
   editedPost = (post) => {
     this.setState({ editedPost: post });
