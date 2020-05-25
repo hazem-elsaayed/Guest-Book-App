@@ -3,6 +3,7 @@ import Post from './components/Post/Post';
 import Edit from './components/Edit/Edit';
 import Navbar from './components/Navbar/Navbar';
 import NewPost from './components/NewPost/NewPost';
+import Signin from './components/Signin/Signin';
 import './App.css';
 
 class App extends Component {
