@@ -102,7 +102,12 @@ app.post('/register', (req, res) => {
   });
   user
     .save()
-    .then((data) => res.json(data))
+    .then((user) => res.json({
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      date: user.date,
+    }))
     .catch((err) => res.status(400).json('Unable to register'));
 });
 
