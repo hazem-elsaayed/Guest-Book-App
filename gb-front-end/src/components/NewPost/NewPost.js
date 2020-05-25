@@ -27,8 +27,8 @@ class NewPost extends Component {
       body: JSON.stringify({
         title: this.state.title,
         description: this.state.description,
-        createdBy: 'Zoma',
-        email: 'zoma@gmail.com',
+        createdBy: this.props.user.name,
+        email: this.props.user.email,
       }),
     })
       .then((res) => res.json())
