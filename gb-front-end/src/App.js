@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Post from './components/Post/Post';
 import Edit from './components/Edit/Edit';
+import Navbar from './components/Navbar/Navbar';
 import './App.css';
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
       <div className="App">
         {this.state.route === 'home' ? (
           <div>
+            <Navbar />
             <Post routeChange={this.Routing} editedPost={this.editedPost} />
           </div>
         ) : (
