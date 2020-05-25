@@ -16,3 +16,13 @@ input{
   height:auto;
   width:30vw;
  }
+
+ textarea{
+  resize: vertical;
+  width: 30vw;
+  height: 20vh;
+}
+
+p{
+  white-space: pre-line;
+}
