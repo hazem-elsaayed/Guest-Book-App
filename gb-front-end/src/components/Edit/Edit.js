@@ -9,6 +9,16 @@ class Edit extends Component {
     };
   }
 
+  //handling title change
+  titleChange = (txt) => {
+    this.setState({ title: txt.target.value });
+  };
+
+  //handling description change
+  descriptionChange = (txt) => {
+    this.setState({ description: txt.target.value });
+  };
+
   render() {
     const { reouteChange, editedPost } = this.props;
     return (
