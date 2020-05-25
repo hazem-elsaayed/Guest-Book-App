@@ -62,19 +62,28 @@ class Register extends Component {
         <fieldset>
           <legend>Register</legend>
           <label>Name:</label>
-          <input type="text"></input>
+          <input type="text" onChange={(txt) => this.nameChange(txt)}></input>
           <br></br>
           <br></br>
           <label>Email:</label>
-          <input type="email"></input>
+          <input
+            type="email"
+            onChange={(txt) => this.emailChange(txt)}
+          ></input>
           <br></br>
           <br></br>
           <label>password:</label>
-          <input type="password"></input>
+          <input
+            type="password"
+            onChange={(txt) => this.passwordChange(txt)}
+          ></input>
           <br></br>
           <br></br>
           <label>Re-type Password:</label>
-          <input type="password"></input>
+          <input
+            type="password"
+            onChange={(txt) => this.password2Change(txt)}
+          ></input>
           <br></br>
           <br></br>
           <button> Register</button>
