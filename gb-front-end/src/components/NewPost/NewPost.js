@@ -25,15 +25,17 @@ class NewPost extends Component {
         <fieldset>
           <legend>Add New Post</legend>
           <label>Title:</label>
-          <input type="text"></input>
+          <input type="text" onChange={(txt) => this.titleChange(txt)}></input>
           <br></br>
           <br></br>
           <label>Description:</label>
-          <textarea></textarea>
+          <textarea onChange={(txt) => this.descriptionChange(txt)}></textarea>
           <br></br>
           <br></br>
           <button>Submit</button>
-          <button>Cancel</button>
+          <button onClick={() => this.props.routeChange('home')}>
+            Cancel
+          </button>
         </fieldset>
       </div>
     );
