@@ -37,3 +37,20 @@ The server has 7 end points which are:
 * **Reply Endpoint** : receives a post request with a reply's (description, writtenBy) data and store it to the desired post using the post id from the url and returns back the post after update
 * **Register Endpoint** : receives a post request with a user's (name, email, password) data, hashs the password and saves the information in the database and returns the user's information
 * **Signin Endpoint** : receives a post request with the email and password and if email is in the database it compares the password and gives back the user's information 
+
+## Frontend
+It is written in JS using React framwork and CSS is used for styling. <br/>
+The app contains 7 components and 5 pages. <br/>
+As I did not use ant 3rd part liberary (like react-router or redux), I used the state to navigate between the pages .
+### Components
+* **App Component**: The main component it's state has the user information (which is received from siginin or register component), route to change the page display, and the edited post data which is received from Post component and passed to the Edit component. 
+<!-- It has also 3 functions : 1, `Routing()` that recieves the route from different component and update the state to render the correct page, 2,3, `editedPost()` & `loadUser()` that saves the data recieved from Post, Signin or Register components to the state -->
+* **Post Component**: It's state has the initial data recieved from the server and the reply text to be sent to the server and it renders all the posts with reply, edit and delete buttons.
+* **Edit Component**: It's state initially has the post's data recieved from app component and then it is updated with the changes on this data and sends the updated data to the server.<br>
+It renders the form with which you can update the post. 
+* **Navbar Component**: It is a function component navigation bar which renders the application name on top left and button links on the top right.
+* **NewPost Component**: It's state has the title and description of the new post to be sent to the server and it renders the form with which you can create new the post. 
+* **Signin Component**: It's state has the name and email of the user to be sent to the server to get authenticated and authorized. <be/>
+It renders the form with which you can signin 
+* **Register Component**: It's state has the name, email, and password of the user to be sent to the server to get registered. <be/>
+It renders the form with which you can register.
