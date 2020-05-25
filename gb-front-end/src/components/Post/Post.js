@@ -62,16 +62,17 @@ class Post extends Component {
   };
 
   render() {
-    console.log(this.state.data);
     return (
       <div className="container">
         <h2>Welcome {this.props.user.name} to the Guest Book App</h2>
+        {/* Looping throught the posts */}
         {this.state.data.map((post, i) => {
           return (
             <div className="post">
               <h3>{post.title}</h3>
               <p className="pstTxt">{post.description}</p>
               <p>{post.createdBy} wrote</p>
+              {/* Adding condition to show the edit and delete buttons only if the user is the same one who created the post */}
               {post.email === this.props.user.email ? (
                 <div>
                   <button onClick={() => this.edit(post)}>Edit</button>
