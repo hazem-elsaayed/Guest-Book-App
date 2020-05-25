@@ -53,7 +53,7 @@ class NewPost extends Component {
           <textarea onChange={(txt) => this.descriptionChange(txt)}></textarea>
           <br></br>
           <br></br>
-          <button>Submit</button>
+          <button onClick={() => this.submit()}>Submit</button>
           <button onClick={() => this.props.routeChange('home')}>
             Cancel
           </button>
