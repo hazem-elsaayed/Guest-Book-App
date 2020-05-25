@@ -50,24 +50,29 @@ class App extends Component {
         {this.state.route === 'home' ? (
           <div>
             <Navbar routeChange={this.Routing} />
-            <Post routeChange={this.Routing} editedPost={this.editedPost} />
+            <Post
+              routeChange={this.Routing}
+              editedPost={this.editedPost}
+              user={this.state.user}
+            />
           </div>
         ) : this.state.route === 'edit' ? (
           <div>
-            <Edit
-              routeChange={this.Routing}
-              editedPost={this.state.editedPost}
-            />
+            <div>
+              <Navbar routeChange={this.Routing} />
+              <Edit
+                routeChange={this.Routing}
+                editedPost={this.state.editedPost}
+              />
+            </div>
           </div>
         ) : this.state.route === 'newPost' ? (
           <div>
             <Navbar routeChange={this.Routing} />
-            <NewPost routeChange={this.Routing} />
+            <NewPost routeChange={this.Routing} user={this.state.user} />
           </div>
         ) : this.state.route === 'signin' ? (
-          <div>
-            <Signin routeChange={this.Routing} loadUser={this.loadUser} />
-          </div>
+          <Signin routeChange={this.Routing} loadUser={this.loadUser} />
         ) : this.state.route === 'register' ? (
           <Register routeChange={this.Routing} loadUser={this.loadUser} />
         ) : (
