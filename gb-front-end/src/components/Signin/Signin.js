@@ -32,6 +32,7 @@ class Signin extends Component {
       .then((res) => res.json())
       .then((data) => {
         if (data.id) {
+          this.props.loadUser(data);
           this.props.routeChange('home');
         } else {
           window.alert('Please Fill All The Fields With Proper Credintals');
