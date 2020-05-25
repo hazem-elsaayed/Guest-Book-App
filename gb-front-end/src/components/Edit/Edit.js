@@ -20,21 +20,28 @@ class Edit extends Component {
   };
 
   render() {
-    const { reouteChange, editedPost } = this.props;
+    const { routeChange, editedPost } = this.props;
     return (
       <div className="edit">
         <fieldset>
           <legend>Edit Your Post</legend>
           <label>Title:</label>
-          <input type="text" defaultValue={editedPost.title}></input>
+          <input
+            type="text"
+            defaultValue={editedPost.title}
+            onChange={(txt) => this.titleChange(txt)}
+          ></input>
           <br></br>
           <br></br>
           <label>Description:</label>
-          <textarea defaultValue={editedPost.description}></textarea>
+          <textarea
+            defaultValue={editedPost.description}
+            onChange={(txt) => this.descriptionChange(txt)}
+          ></textarea>
           <br></br>
           <br></br>
           <button>Submit</button>
-          <button>Cancel</button>
+          <button onClick={() => routeChange('home')}>Cancel</button>
         </fieldset>
       </div>
     );
