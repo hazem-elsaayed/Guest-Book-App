@@ -65,7 +65,7 @@ class App extends Component {
           </div>
         ) : this.state.route === 'signin' ? (
           <div>
-            <Signin routeChange={this.Routing} />
+            <Signin routeChange={this.Routing} loadUser={this.loadUser} />
           </div>
         ) : (
           <div></div>
