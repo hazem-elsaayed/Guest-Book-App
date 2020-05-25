@@ -19,6 +19,25 @@ class Edit extends Component {
     this.setState({ description: txt.target.value });
   };
 
+  //handling submit button onClick event
+  submit = () => {
+    fetch(`http://localhost:5000/edit/${this.props.editedPost._id}`, {
+      method: 'post',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        title: this.state.title,
+        description: this.state.description,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data._id) {
+          this.props.routeChange('home');
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   render() {
     const { routeChange, editedPost } = this.props;
     return (
