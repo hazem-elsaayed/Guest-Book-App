@@ -31,7 +31,10 @@ class App extends Component {
           </div>
         ) : (
           <div>
-            <Edit />
+            <Edit
+              routeChange={this.Routing}
+              editedPost={this.state.editedPost}
+            />
           </div>
         )}
       </div>
