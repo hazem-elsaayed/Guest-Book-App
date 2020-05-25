@@ -59,7 +59,7 @@ class Edit extends Component {
           ></textarea>
           <br></br>
           <br></br>
-          <button>Submit</button>
+          <button onClick={() => this.submit()}>Submit</button>
           <button onClick={() => routeChange('home')}>Cancel</button>
         </fieldset>
       </div>
