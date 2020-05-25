@@ -56,3 +56,11 @@ It renders the form with which you can create new the post.
 It renders the form with which you can signin 
 * **Register Component**: It's state has the name, email, and password of the user to be sent to the server to get registered. <br/>
 It renders the form with which you can register.
+
+### Pages
+
+* **Home Page**: In which Navbar and Post components are rendered when the `App.state.router === 'home'`
+* **Edit Page**: In which Navbar and Edit components are rendered when the `App.state.router === 'edit'`
+* **NewPost Page**: In which Navbar and NewPost components are rendered when the `App.state.router === 'newPost'`
+* **Signin Page**: In which Signin component is rendered when the `App.state.router === 'signin'`
+* **Register Page**: In which Register component is rendered when the `App.state.router === 'register'`
