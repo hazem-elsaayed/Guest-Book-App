@@ -9,6 +9,16 @@ class Signin extends Component {
     };
   }
 
+  //handle email change
+  emailChange = (txt) => {
+    this.setState({ email: txt.target.value });
+  };
+
+  //handle password change
+  passwordChange = (txt) => {
+    this.setState({ password: txt.target.value });
+  };
+
   render() {
     return (
       <div>
