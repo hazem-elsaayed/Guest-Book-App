@@ -108,7 +108,7 @@ app.post('/register', (req, res) => {
       email: user.email,
       date: user.date,
     }))
-    .catch((err) => res.status(400).json('Unable to register'));
+    .catch((err) => res.status(400).json(err));
 });
 
 //signin endpoint
