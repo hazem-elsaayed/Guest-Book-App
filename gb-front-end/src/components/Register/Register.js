@@ -51,8 +51,8 @@ class Register extends Component {
           this.props.routeChange('home');
         } else if (data === 'Worng Inputs') {
           window.alert('Please Fill All The Fields With Proper Credintals ');
-        } else if(data.errmsg.includes('duplicate key')){
-          window.alert('Email is Already Registered')
+        } else if (data.errmsg.includes('duplicate key')) {
+          window.alert('Email is Already Registered');
         }
       })
       .catch((err) => console.log(err));
@@ -60,7 +60,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div>
+      <div className="forms">
         <fieldset>
           <legend>Register</legend>
           <label>Name:</label>

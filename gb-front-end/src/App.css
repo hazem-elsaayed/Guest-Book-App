@@ -6,6 +6,17 @@
   min-height: 100vh;
 }
 
+fieldset{
+  justify-self: center;
+  align-self: center;
+  width: 60vw;
+}
+
+.forms{
+  display: flex;
+  flex-direction: column;
+}
+
 label{
   display: inline-block;
   width: 100px;

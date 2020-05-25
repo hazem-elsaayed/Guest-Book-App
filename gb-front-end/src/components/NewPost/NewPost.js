@@ -42,7 +42,7 @@ class NewPost extends Component {
 
   render() {
     return (
-      <div>
+      <div className="forms">
         <fieldset>
           <legend>Add New Post</legend>
           <label>Title:</label>

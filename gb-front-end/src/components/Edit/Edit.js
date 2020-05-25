@@ -21,7 +21,7 @@ class Edit extends Component {
 
   //handling submit button onClick event
   submit = () => {
-    console.log(this.props.editedPost._id)
+    console.log(this.props.editedPost._id);
     fetch(`http://localhost:5000/edit/${this.props.editedPost._id}`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
@@ -42,7 +42,7 @@ class Edit extends Component {
   render() {
     const { routeChange, editedPost } = this.props;
     return (
-      <div className="edit">
+      <div className="forms">
         <fieldset>
           <legend>Edit Your Post</legend>
           <label>Title:</label>
