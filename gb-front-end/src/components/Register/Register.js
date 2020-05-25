@@ -49,7 +49,7 @@ class Register extends Component {
         if (data.id) {
           this.props.loadUser(data);
           this.props.routeChange('home');
-        } else if (data === 'Worng Inputs') {
+        } else if (data === 'Wrong Inputs') {
           window.alert('Please Fill All The Fields With Proper Credintals ');
         } else if (data.errmsg.includes('duplicate key')) {
           window.alert('Email is Already Registered');

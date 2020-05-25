@@ -66,7 +66,6 @@ class Signin extends Component {
           <br></br>
           <button onClick={() => this.submit()}>Submit</button>
           <br></br>
-          <br></br>
           <button onClick={() => this.props.routeChange('register')}>
             Register
           </button>
