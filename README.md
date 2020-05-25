@@ -25,5 +25,5 @@ It is written in JS using express framework, a MongoDB is used to store data and
 
 #### Models
 2 models are used to store data
-* **Post model** : in which posts are stored and it has the following properties: **title** , **describtion** which are the main data of a post, **createdBy**, **email** which cointain the data of the creator user, **replies** which holds all the replies to the post, and finally the date which cointains the creating date of a post
+* **Post model** : in which posts are stored and it has the following properties:<br/> **title** , **describtion** which are the main data of a post, <br/>**createdBy**, **email** which cointain the data of the creator user, <br/>**replies** which holds all the replies to the post, and finally <br/>**date** which cointains the creating date of a post
 * **User model** : in which Users data are stored and it has the following properties: **name**, **email**, **password**, and **date** for user creation time
