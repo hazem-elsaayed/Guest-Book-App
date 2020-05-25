@@ -35,7 +35,7 @@ class Register extends Component {
     if (this.state.password !== this.state.password2) {
       return window.alert('Re-Typed Password is Not Matching');
     }
-    fetch(`http://localhost:3000/register`, {
+    fetch(`http://localhost:5000/register`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
@@ -86,9 +86,11 @@ class Register extends Component {
           ></input>
           <br></br>
           <br></br>
-          <button> Register</button>
+          <button onClick={() => this.submit()}> Register</button>
           <br></br>
-          <button>Signin</button>
+          <button onClick={() => this.props.routeChange('signin')}>
+            Signin
+          </button>
         </fieldset>
       </div>
     );
