@@ -72,6 +72,14 @@ class Post extends Component {
               <h3>{post.title}</h3>
               <p className="pstTxt">{post.description}</p>
               <p>{post.createdBy} wrote</p>
+              {post.email === this.props.user.email ? (
+                <div>
+                  <button onClick={() => this.edit(post)}>Edit</button>
+                  <button onClick={() => this.delete(post)}>Delete</button>
+                </div>
+              ) : (
+                <br></br>
+              )}
               <input
                 type="text"
                 placeholder="Add a reply"
@@ -79,8 +87,6 @@ class Post extends Component {
                 onChange={(txt) => this.txtChange(txt)}
               ></input>
               <button onClick={() => this.addReply(post, i)}>reply</button>
-              <button onClick={() => this.edit(post)}>Edit</button>
-              <button onClick={() => this.delete(post)}>Delete</button>
               {post.replies.map((reply) => {
                 return (
                   <div className="reply">
