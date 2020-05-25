@@ -4,7 +4,7 @@ import Edit from './components/Edit/Edit';
 import Navbar from './components/Navbar/Navbar';
 import NewPost from './components/NewPost/NewPost';
 import Signin from './components/Signin/Signin';
-import Register from './components/Register/Register'
+import Register from './components/Register/Register';
 import './App.css';
 
 class App extends Component {
@@ -68,6 +68,8 @@ class App extends Component {
           <div>
             <Signin routeChange={this.Routing} loadUser={this.loadUser} />
           </div>
+        ) : this.state.route === 'register' ? (
+          <Register routeChange={this.Routing} loadUser={this.loadUser} />
         ) : (
           <div></div>
         )}
