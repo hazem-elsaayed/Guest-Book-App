@@ -19,6 +19,27 @@ class NewPost extends Component {
     this.setState({ description: txt.target.value });
   };
 
+  //handling submit button onclick event
+  submit = () => {
+    fetch(`http://localhost:5000/post`, {
+      method: 'post',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        title: this.state.title,
+        description: this.state.description,
+        createdBy: 'Zoma',
+        email: 'zoma@gmail.com',
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data._id) {
+          this.props.routeChange('home');
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   render() {
     return (
       <div>
