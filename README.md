@@ -43,8 +43,7 @@ It is written in JS using React framwork and CSS is used for styling. <br/>
 The app contains 7 components and 5 pages. <br/>
 As I did not use ant 3rd part liberary (like react-router or redux), I used the state to navigate between the pages .
 ### Components
-* **App Component**: The main component it's state has the user information (which is received from siginin or register component), route to change the page display, and the edited post data which is received from Post component and passed to the Edit component. 
-<!-- It has also 3 functions : 1, `Routing()` that recieves the route from different component and update the state to render the correct page, 2,3, `editedPost()` & `loadUser()` that saves the data recieved from Post, Signin or Register components to the state -->
+* **App Component**: The main component it's state has the user information (which is received from siginin or register component), route to change the page display, and the edited post data which is received from Post component and passed to the Edit component.
 * **Post Component**: It's state has the initial data recieved from the server and the reply text to be sent to the server.<br/>
 It renders all the posts with reply, edit and delete buttons.
 * **Edit Component**: It's state initially has the post's data (recieved from app component) which is updated with the changes and sends the updated data to the server.<br>
@@ -64,3 +63,10 @@ It renders the form with which you can register.
 * **NewPost Page**: In which Navbar and NewPost components are rendered when the `App.state.router === 'newPost'`
 * **Signin Page**: In which Signin component is rendered when the `App.state.router === 'signin'`
 * **Register Page**: In which Register component is rendered when the `App.state.router === 'register'`
+
+## Security 
+
+* No Duplicate Emails: The emails are unique so that a user can't register 2 accounts with the same email 
+* Editing and Deleting: Only the creator user can edit or delete the post
+* Passwords: Passwords are hashed and stored scurely in the database and they are not sent to the server or the front end from any endpoint
+* Registering: Validating inputs for the register form so that the email format is correct, the password is matching the re-typed password, and user can't submit an empty field
