@@ -31,6 +31,13 @@ class Register extends Component {
     this.setState({ password2: txt.target.value });
   };
 
+  submit =()=>{
+    if (this.state.password !== this.state.password2){
+      return window.alert('Re-Typed Password is Not Matching')
+    }
+    
+  }
+
   render() {
     return (
       <div>
