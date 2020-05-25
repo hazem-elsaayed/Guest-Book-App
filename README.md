@@ -2,18 +2,18 @@
 
 A simple app for writing posts and replying to others posts <br/>
 You can also edit or delete posts but only the ones that you have created previously <br/>
-This is a MERN app which used React and CSS for the front end and Node JS (Express) and MongoDB (Mongoose) for the backend
+This is a MERN app which uses React and CSS for the front end and Node JS (Express) and MongoDB (Mongoose) for the backend
 
 ## Installation
 
-Clone the Github repository and use npm to install dependencies <br/>
+Clone the Github repository and use npm to install dependencies at the server folder <br/>
 ```
 $ git clone https://github.com/Zomaldinho/Guest-Book-App.git
 $ cd Guest-Book-App
 $ cd server
 $ npm install
 ```
-After installation run `$ npm start` to start the server at port 5000 <br/>
+After installation run `$ npm start` to start the server at port 5000 and make sure that the following message are shown in the terminal `App is working on port 5000` and `Successfully connected to the database`. if not, restart the server by pressing CTRL+C and `$ npm start` again <br/>
 Then open a new terminal window inside the **gb-front-end** folder and install the dependencies for the front end using `$ npm install`<br/>
 Finally start the front end with `$ npm start` at port 3000
 
