@@ -3,11 +3,21 @@ import React, { Component } from 'react';
 class NewPost extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      title:'',
-      description:''
-    }
+    this.state = {
+      title: '',
+      description: '',
+    };
   }
+
+  //handling title change
+  titleChange = (txt) => {
+    this.setState({ title: txt.target.value });
+  };
+
+  //handling description change
+  descriptionChange = (txt) => {
+    this.setState({ description: txt.target.value });
+  };
 
   render() {
     return (
