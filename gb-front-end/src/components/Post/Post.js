@@ -36,13 +36,13 @@ class Post extends Component {
 
   //updating the replies when click Reply button
   addReply = (post, i) => {
-    console.log(post._id)
+    console.log(post._id);
     fetch(`http://localhost:5000/reply/${post._id}`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         description: this.state.replyText,
-        writtenBy: 'Zoma',
+        writtenBy: this.props.user.name,
       }),
     })
       .then((res) => res.json())
@@ -56,32 +56,31 @@ class Post extends Component {
   };
 
   //handling Edit button onClick event
-  edit = (post)=>{
+  edit = (post) => {
     this.props.editedPost(post);
-    this.props.routeChange('edit')
-  }
+    this.props.routeChange('edit');
+  };
 
   render() {
     console.log(this.state.data);
     return (
       <div className="container">
+        <h2>Welcome {this.props.user.name} to the Guest Book App</h2>
         {this.state.data.map((post, i) => {
           return (
             <div className="post">
               <h3>{post.title}</h3>
               <p className="pstTxt">{post.description}</p>
               <p>{post.createdBy} wrote</p>
-              {/* <div> */}
               <input
                 type="text"
                 placeholder="Add a reply"
                 className="rplyTxt"
                 onChange={(txt) => this.txtChange(txt)}
               ></input>
-              <button onClick={()=>this.addReply(post,i)}>reply</button>
-              <button onClick={()=>this.edit(post)}>Edit</button>
+              <button onClick={() => this.addReply(post, i)}>reply</button>
+              <button onClick={() => this.edit(post)}>Edit</button>
               <button onClick={() => this.delete(post)}>Delete</button>
-              {/* </div> */}
               {post.replies.map((reply) => {
                 return (
                   <div className="reply">
