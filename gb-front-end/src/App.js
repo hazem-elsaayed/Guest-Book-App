@@ -12,6 +12,12 @@ class App extends Component {
     this.state = {
       route: 'signin',
       editedPost: null,
+      user: {
+        id: '',
+        name: '',
+        email: '',
+        date: '',
+      },
     };
   }
 
