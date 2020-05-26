@@ -21,6 +21,9 @@ class NewPost extends Component {
 
   //handling submit button onclick event
   submit = () => {
+    if (!this.state.title || !this.state.description) {
+      return alert('You can not submit empty Title and/or Description');
+    }
     fetch(`http://localhost:5000/post`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
