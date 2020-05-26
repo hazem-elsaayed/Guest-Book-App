@@ -21,7 +21,9 @@ class Edit extends Component {
 
   //handling submit button onClick event
   submit = () => {
-    console.log(this.props.editedPost._id);
+    if (!this.state.title || !this.state.description) {
+      return alert('You can not submit empty Title and/or Description');
+    }
     fetch(`http://localhost:5000/edit/${this.props.editedPost._id}`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
