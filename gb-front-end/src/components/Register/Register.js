@@ -31,6 +31,14 @@ class Register extends Component {
     this.setState({ password2: txt.target.value });
   };
 
+  //handle enter key press
+  enterPress=(e)=>{
+    if(e.which=== 13){
+      this.submit()
+    }
+  }
+
+  //handle register button onclick event
   submit = () => {
     if (this.state.password !== this.state.password2) {
       return window.alert('Re-Typed Password is Not Matching');
@@ -88,6 +96,7 @@ class Register extends Component {
           <input
             type="password"
             onChange={(txt) => this.password2Change(txt)}
+            onKeyPress={(e)=>this.enterPress(e)}
           ></input>
           <br></br>
           <br></br>
