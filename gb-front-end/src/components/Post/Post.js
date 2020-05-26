@@ -34,6 +34,13 @@ class Post extends Component {
     this.setState({ replyText: e.target.value });
   };
 
+  //handle enter key press on the reply input text
+  enterPress = (e) => {
+    if (e.which === 13) {
+      this.submit();
+    }
+  };
+
   //updating the replies when click Reply button
   addReply = (post, i) => {
     if (!this.state.replyText) {
@@ -88,6 +95,7 @@ class Post extends Component {
                 placeholder="Add a reply"
                 className="rplyTxt"
                 onChange={(txt) => this.txtChange(txt)}
+                onKeyPress={(e) => this.enterPress(e)}
               ></input>
               <button onClick={() => this.addReply(post, i)}>reply</button>
               {post.replies.map((reply) => {
