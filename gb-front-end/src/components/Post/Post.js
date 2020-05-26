@@ -37,7 +37,7 @@ class Post extends Component {
   //handle enter key press on the reply input text
   enterPress = (e) => {
     if (e.which === 13) {
-      this.submit();
+      this.addReply();
     }
   };
 
