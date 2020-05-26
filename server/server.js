@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
-    );
+  );
   res.header(
     'Access-Control-Allow-Methods',
     'GET, POST, OPTIONS, PUT, DELETE'
@@ -59,6 +59,11 @@ app.post('/post', (req, res) => {
 //edit post endpoint
 app.post('/edit/:postId', (req, res) => {
   const { title, description } = req.body;
+  if (!title || !description) {
+    return res
+      .status(400)
+      .json('You can not submit empty Title and/or Description');
+  }
   Post.findByIdAndUpdate(req.params.postId, {
     $set: { title: title, description: description, date: Date.now() },
   })
@@ -102,12 +107,14 @@ app.post('/register', (req, res) => {
   });
   user
     .save()
-    .then((user) => res.json({
-      id: user._id,
-      name: user.name,
-      email: user.email,
-      date: user.date,
-    }))
+    .then((user) =>
+      res.json({
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        date: user.date,
+      })
+    )
     .catch((err) => res.status(400).json(err));
 });
 
