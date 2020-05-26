@@ -19,6 +19,13 @@ class Signin extends Component {
     this.setState({ password: txt.target.value });
   };
 
+  //handle enter key press
+  enterPress=(e)=>{
+    if(e.which=== 13){
+      this.submit()
+    }
+  }
+
   //handle submit button onclick event
   submit = () => {
     fetch(`http://localhost:5000/signin`, {
@@ -61,6 +68,7 @@ class Signin extends Component {
           <input
             type="password"
             onChange={(txt) => this.passwordChange(txt)}
+            onKeyPress={(e)=>this.enterPress(e)}
           ></input>
           <br></br>
           <br></br>
