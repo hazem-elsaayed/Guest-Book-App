@@ -81,6 +81,9 @@ app.delete('/delete/:postId', (req, res) => {
 //reply to post endpoint
 app.post('/reply/:postId', (req, res) => {
   const { description, writtenBy } = req.body;
+  if (!description) {
+    return res.status(400).json('You can not submit empty description');
+  }
   Post.findById(req.params.postId)
     .then((post) => {
       post.replies.push({ description: description, writtenBy: writtenBy });
