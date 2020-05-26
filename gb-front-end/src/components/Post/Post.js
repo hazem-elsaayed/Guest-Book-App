@@ -36,7 +36,9 @@ class Post extends Component {
 
   //updating the replies when click Reply button
   addReply = (post, i) => {
-    console.log(post._id);
+    if (!this.state.replyText) {
+      return alert('You can not submit empty Reply');
+    }
     fetch(`http://localhost:5000/reply/${post._id}`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
