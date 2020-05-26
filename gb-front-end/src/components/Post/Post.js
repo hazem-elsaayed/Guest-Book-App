@@ -35,9 +35,9 @@ class Post extends Component {
   };
 
   //handle enter key press on the reply input text
-  enterPress = (e) => {
+  enterPress = (e, post, i) => {
     if (e.which === 13) {
-      this.addReply();
+      this.addReply(post, i);
     }
   };
 
@@ -95,7 +95,7 @@ class Post extends Component {
                 placeholder="Add a reply"
                 className="rplyTxt"
                 onChange={(txt) => this.txtChange(txt)}
-                onKeyPress={(e) => this.enterPress(e)}
+                onKeyPress={(e) => this.enterPress(e, post, i)}
               ></input>
               <button onClick={() => this.addReply(post, i)}>reply</button>
               {post.replies.map((reply) => {
